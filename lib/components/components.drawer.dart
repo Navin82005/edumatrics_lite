@@ -47,10 +47,6 @@ class CustomDrawer extends StatelessWidget {
                 icon: Icons.logout,
                 onTap: () {
                   service.logout();
-                  // Navigator.pop(context);
-                  // Navigator.pop(context);
-                  // Navigator.pushNamedAndRemoveUntil(
-                  //     context, "studentLogin", ModalRoute.withName("home"));
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(builder: (context) => StudentLogin()),

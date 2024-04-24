@@ -76,14 +76,14 @@ class AuthService {
       await prefs.setString('userType', "student");
       await prefs.setBool('login-status', true);
       await prefs.setString('name', responseData["name"]);
-      await prefs.setString('sem', responseData["sem"]);
+      await prefs.setString('academicYear', responseData["academicYear"]);
+      await prefs.setString('department', responseData["department"]);
       await prefs.setString('rollNumber', responseData["rollNumber"]);
       await prefs.setString('registerNumber', responseData["registerNumber"]);
-      await prefs.setString('lectureHall', responseData["lectureHall"]);
-      await prefs.setString('inClass', responseData["inClass"]);
-      await prefs.setString('userMobile', responseData["userMobile"]);
-      await prefs.setString('userDob', responseData["userDob"]);
-      await prefs.setString('department', responseData["department"]);
+      await prefs.setString('currentSem', responseData["currentSem"]);
+      // await prefs.setString('lectureHall', responseData["lectureHall"]);
+      // await prefs.setString('userMobile', responseData["userMobile"]);
+      // await prefs.setString('userDob', responseData["userDob"]);
     }
   }
 
@@ -181,8 +181,8 @@ class AuthService {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('access');
     await prefs.remove('refresh');
-    await prefs.setString('userType', "student");
-    await prefs.setBool('login-status', false);
+    await prefs.remove('userType');
+    await prefs.remove('login-status');
     await prefs.remove('name');
     await prefs.remove('sem');
     await prefs.remove('rollNumber');
